@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using XMUI.Nodes;
 using static SDL.SDL3;
 using static XMUI.XMUI;
 
 namespace XMUI
 {
-    public unsafe class AppForm 
+    public unsafe class AppForm : Node
     {
         public async Task StartRendering(int globalListId)
         {
@@ -21,17 +22,16 @@ namespace XMUI
 
             bool m_frameOpen = true;
 
+
             while (m_frameOpen) {
                 while (SDL_PollEvent(&e))
                 {
                     switch (e.type)
                     {
-                        // Handle clicking the window close button
                         case (uint)SDL_EventType.SDL_EVENT_QUIT:
                             m_frameOpen = false;
                             break;
 
-                        // Example: Pass key/mouse input to your UI framework down here
                         case (uint)SDL_EventType.SDL_EVENT_KEY_DOWN:
                             if (e.key.key == SDL_Keycode.SDLK_ESCAPE)
                             {
@@ -40,6 +40,12 @@ namespace XMUI
                             break;
                     }
                 }
+
+                float mX;
+                float mY;
+                SDL_GetMouseState(&mX, &mY);
+
+                XMUI.MouseAABB = new Collision.AABB((int)mX, (int)mY, 1, 1);
                 xmBindList(globalListId);
                 SDL_RenderClear(commandList);
                 SDL_RenderPresent(commandList);

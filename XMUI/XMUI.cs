@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using XMUI.Collision;
 
 namespace XMUI
 {
@@ -12,6 +13,8 @@ namespace XMUI
         public static SDL_Renderer* commandList;
 
         public static SDL_Renderer* nullrdr;
+
+        public static AABB MouseAABB;
 
         public static void xmBindList(int listId)
         {

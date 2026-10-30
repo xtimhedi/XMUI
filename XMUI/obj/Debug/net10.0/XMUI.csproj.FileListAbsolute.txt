@@ -11,3 +11,4 @@ C:\Users\xmcwht\source\repos\XMUI\XMUI\obj\Debug\net10.0\refint\XMUI.dll
 C:\Users\xmcwht\source\repos\XMUI\XMUI\obj\Debug\net10.0\XMUI.pdb
 C:\Users\xmcwht\source\repos\XMUI\XMUI\obj\Debug\net10.0\ref\XMUI.dll
 C:\Users\xmcwht\source\repos\XMUI\XMUI\obj\Debug\net10.0\XMUI.csproj.Up2Date
+C:\Users\xmcwht\source\repos\XMUI\XMUI\obj\Debug\net10.0\XMUI.sourcelink.json
